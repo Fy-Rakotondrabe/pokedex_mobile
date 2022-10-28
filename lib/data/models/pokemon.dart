@@ -1,42 +1,44 @@
-class Pokemon {
-  final int id;
-  final String num;
-  final String name;
-  final String img;
-  final List<String> type;
-  final String height;
-  final String weight;
-  final String candy;
-  final int candyCount;
-  final String egg;
-  final int spawnChance;
-  final String spawnTime;
-  final int avgSpawns;
-  final List<double> multipliers;
-  final List<String> weaknesses;
-  final List<String> evolutionNum;
+import 'package:pokedex_mobile/domain/entities/pokemon.dart';
 
-  Pokemon({
-    required this.id,
-    required this.num,
-    required this.name,
-    required this.img,
-    required this.type,
-    required this.height,
-    required this.weight,
-    required this.candy,
-    required this.candyCount,
-    required this.egg,
-    required this.spawnChance,
-    required this.spawnTime,
-    required this.avgSpawns,
-    required this.multipliers,
-    required this.weaknesses,
-    required this.evolutionNum,
-  });
+class PokemonModel extends Pokemon {
+  PokemonModel({
+    required int id,
+    required String num,
+    required String name,
+    required String img,
+    required List<String> type,
+    required String height,
+    required String weight,
+    required String candy,
+    required int candyCount,
+    required String egg,
+    required int spawnChance,
+    required String spawnTime,
+    required int avgSpawns,
+    required List<double> multipliers,
+    required List<String> weaknesses,
+    required List<String> evolutionNum,
+  }) : super(
+          id: id,
+          num: num,
+          name: name,
+          img: img,
+          type: type,
+          height: height,
+          weight: weight,
+          candy: candy,
+          candyCount: candyCount,
+          egg: egg,
+          spawnChance: spawnChance,
+          spawnTime: spawnTime,
+          avgSpawns: avgSpawns,
+          multipliers: multipliers,
+          weaknesses: weaknesses,
+          evolutionNum: evolutionNum,
+        );
 
-  factory Pokemon.fromJson(Map<String, dynamic> json) {
-    return Pokemon(
+  factory PokemonModel.fromJson(Map<String, dynamic> json) {
+    return PokemonModel(
       id: json['id'],
       num: json['num'],
       name: json['name'],
